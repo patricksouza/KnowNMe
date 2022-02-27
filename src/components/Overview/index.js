@@ -21,6 +21,7 @@ export default function Overview() {
   const [searchQuery, setSearchQuery] = useState("");
   const [dataOfIp, setDataOfIp] = useState({});
   const [visible, setVisible] = useState(false);
+  const [inputQueryStatus, setInputQueryStatus] = useState("#fff");
 
   const onToggleSnackBar = () => setVisible(!visible);
   const onDismissSnackBar = () => setVisible(false);
@@ -29,7 +30,7 @@ export default function Overview() {
     NetInfo.addEventListener((state) => {
       setConnectionStatus(state.isWifiEnabled || state.isConnected);
     });
-  }, 0);
+  }, 1000);
 
   const myDataObj = {
     ipAddress: data["ip"] || " -",
@@ -47,8 +48,16 @@ export default function Overview() {
   async function generateIpData(ipTarget) {
     const getMyIpData = "http://ip-api.com/json/#";
     const newRequest = getMyIpData.replace("#", ipTarget);
-    const response = await axios.get(newRequest);
-    if (response.data["status"].toUpperCase() === CONSTANTS.STATUS.FAIL) {
+    let hasError = null;
+    const response = await axios.get(newRequest).catch((err) => {
+      if (err.response) {
+        hasError = err;
+      }
+    });
+    if (
+      response.data["status"].toUpperCase() === CONSTANTS.STATUS.FAIL ||
+      hasError !== null
+    ) {
       setSnackDynamicText("Private range or just failed!");
       onToggleSnackBar();
     }
@@ -76,7 +85,10 @@ export default function Overview() {
   const onChangeSearch = (query) => {
     setSearchQuery(query);
     if (validateIp(query)) {
+      setInputQueryStatus("#fff");
       generateIpData(query);
+    } else {
+      setInputQueryStatus("red");
     }
   };
 
@@ -110,7 +122,7 @@ export default function Overview() {
             placeholder="Type an ip"
             placeholderTextColor="#fff"
             iconColor="#fff"
-            inputStyle={{color: "#fff"}}
+            inputStyle={{ color: inputQueryStatus }}
             onChangeText={onChangeSearch}
             value={searchQuery}
           />
