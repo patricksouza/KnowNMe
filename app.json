@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "KnowNMe",
+    "slug": "KnowNMe",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "com.codevapps.KnowNMe"
+    }
+  }
+}

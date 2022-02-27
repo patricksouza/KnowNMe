@@ -1,0 +1,1 @@
+cd android && ./gradlew clean && ./gradlew :app:bundleRelease --warning-mode all && cd - && npm run android
