@@ -76,11 +76,36 @@ export default function CellPhone() {
         <View style={style.subContainer}>
           <List.Section>
             <List.Subheader style={style.divided}>General</List.Subheader>
-            <List.Item title="ID" description={values.id} />
-            <List.Item title="Battery Life" description={Number(values.battery).toFixed(2) * 100 + "%"} />
-            <List.Item title="Brandname" description={values.brand} />
-            <List.Item title="Base OS" description={values.baseOs} />
-            <List.Item title="Memory" description={bytes(values.totalMemory)} />
+            <List.Item
+              title="ID"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.id}
+            />
+            <List.Item
+              title="Battery Life"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={Number(values.battery).toFixed(2) * 100 + "%"}
+            />
+            <List.Item
+              title="Brandname"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.brand}
+            />
+            <List.Item
+              title="Base OS"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.baseOs}
+            />
+            <List.Item
+              title="Memory"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={bytes(values.totalMemory)}
+            />
           </List.Section>
         </View>
         <View style={style.subContainer}>
@@ -88,10 +113,14 @@ export default function CellPhone() {
             <List.Subheader style={style.divided}>Storage</List.Subheader>
             <List.Item
               title="Free Storage"
+              titleStyle={{ color: "#fff"}}
+              descriptionStyle={{ color: "#fff" }}
               description={bytes(values.freeStorage)}
             />
             <List.Item
               title="Total Storage"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
               description={bytes(values.totalStorage)}
             />
           </List.Section>

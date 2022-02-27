@@ -10,11 +10,14 @@ export default StyleSheet.create({
   },
 
   divided: {
-    borderWidth: .5,
+    borderWidth: 0.5,
     borderColor: "rgba(255,255,255,0.0)",
     borderBottomColor: "#F4717F",
+    color: "#fff",
+    fontSize: 15,
+    fontWeight: "bold",
+    textTransform: "uppercase"
   },
-  subContainer: {},
   title: {
     padding: 5,
     fontSize: 15,
