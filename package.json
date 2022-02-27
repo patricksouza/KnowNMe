@@ -7,7 +7,7 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "build": "expo build:android -t apk"
+    "build": "expo build:android"
   },
   "dependencies": {
     "@react-native-community/netinfo": "7.1.3",
