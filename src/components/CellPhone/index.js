@@ -113,7 +113,7 @@ export default function CellPhone() {
             <List.Subheader style={style.divided}>Storage</List.Subheader>
             <List.Item
               title="Free Storage"
-              titleStyle={{ color: "#fff"}}
+              titleStyle={{ color: "#fff" }}
               descriptionStyle={{ color: "#fff" }}
               description={bytes(values.freeStorage)}
             />

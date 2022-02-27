@@ -16,10 +16,10 @@ export default function Home() {
         headerStyle: {
           backgroundColor: "#1E1E1E",
         },
-        headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
+        headerTintColor: "#fff",
+        headerTitleStyle: {
+          fontWeight: "bold",
+        },
         tabBarActiveTintColor: "#F4717F",
         tabBarInactiveTintColor: "gray",
         tabBarStyle: {

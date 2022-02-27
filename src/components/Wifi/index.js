@@ -29,7 +29,9 @@ export default function Wifi() {
     const response = await NetInfo.fetch("wifi");
     setValues((values) => ({
       ...values,
-      isConnected: !!response.isConnected ? CONSTANTS.CONNECTION_STATUS.UP : CONSTANTS.CONNECTION_STATUS.DOWN,
+      isConnected: !!response.isConnected
+        ? CONSTANTS.CONNECTION_STATUS.UP
+        : CONSTANTS.CONNECTION_STATUS.DOWN,
       type: response.type || "-",
       bSsid: response.details.bssid || "-",
       ssid: response.details.ssid || "-",
@@ -51,18 +53,46 @@ export default function Wifi() {
             <List.Subheader style={style.divided}>General</List.Subheader>
             <List.Item
               title="Wi-Fi Connection status"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
               description={values.isConnected}
-              descriptionStyle={{color: values.isConnected === CONSTANTS.CONNECTION_STATUS.UP ? "#32CD32" : "#B22222", fontWeight: "bold"}}
+              descriptionStyle={{
+                color:
+                  values.isConnected === CONSTANTS.CONNECTION_STATUS.UP
+                    ? "#32CD32"
+                    : "#B22222",
+                fontWeight: "bold",
+              }}
             />
-            <List.Item title="Network Type" description={values.type.toUpperCase()} />
+            <List.Item
+              title="Network Type"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.type.toUpperCase()}
+            />
           </List.Section>
         </View>
         <View style={style.subContainer}>
           <List.Section>
             <List.Subheader style={style.divided}>Network</List.Subheader>
-            <List.Item title="Ip Address" description={values.ipAddress} />
-            <List.Item title="Subnet Mask" description={values.subnet} />
-            <List.Item title="Frequency" description={values.frequency}/>
+            <List.Item
+              title="Ip Address"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.ipAddress}
+            />
+            <List.Item
+              title="Subnet Mask"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.subnet}
+            />
+            <List.Item
+              title="Frequency"
+              titleStyle={{ color: "#fff" }}
+              descriptionStyle={{ color: "#fff" }}
+              description={values.frequency}
+            />
           </List.Section>
         </View>
       </ScrollView>

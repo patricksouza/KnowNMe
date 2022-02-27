@@ -8,11 +8,14 @@ export default StyleSheet.create({
     alignItems: "stretch",
     backgroundColor: "#1E1E1E",
   },
-
   divided: {
     borderWidth: 0.5,
     borderColor: "rgba(255,255,255,0.0)",
     borderBottomColor: "#F4717F",
+    color: "#fff",
+    fontSize: 15,
+    fontWeight: "bold",
+    textTransform: "uppercase",
   },
   subContainer: {},
   title: {
