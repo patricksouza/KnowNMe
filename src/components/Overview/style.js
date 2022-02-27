@@ -8,7 +8,6 @@ export default StyleSheet.create({
     flexDirection: "column",
     alignItems: "stretch",
     backgroundColor: "#1E1E1E",
-    color: "#fff"
   },
   containerButton: {
     flex: 1,
@@ -30,6 +29,7 @@ export default StyleSheet.create({
     flex: 1,
     width: 10,
     margin: 2,
+    color: "#fff"
   },
   snackContainer: {
     borderWidth: 2,
@@ -42,12 +42,14 @@ export default StyleSheet.create({
     marginLeft: 5,
     textTransform: "uppercase",
     fontWeight: "bold",
+    color: "#fff"
   },
   subTitle: {
     padding: 10,
     marginLeft: 15,
     textTransform: "uppercase",
     fontWeight: "bold",
+    color: "#fff"
   },
   searchBar: {
     backgroundColor: "#262626",

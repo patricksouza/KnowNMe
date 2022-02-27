@@ -108,6 +108,9 @@ export default function Overview() {
           <Searchbar
             style={style.searchBar}
             placeholder="Type an ip"
+            placeholderTextColor="#fff"
+            iconColor="#fff"
+            inputStyle={{color: "#fff"}}
             onChangeText={onChangeSearch}
             value={searchQuery}
           />
@@ -115,9 +118,15 @@ export default function Overview() {
           <View style={style.subContainer}>
             <DataTable>
               <DataTable.Header>
-                <DataTable.Title>Time Zone</DataTable.Title>
-                <DataTable.Title>Country</DataTable.Title>
-                <DataTable.Title>City</DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>Time Zone</Text>
+                </DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>Country</Text>
+                </DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>City</Text>
+                </DataTable.Title>
               </DataTable.Header>
               <DataTable.Row>
                 <View style={{ flexGrow: 1, flexDirection: "row" }}>
@@ -134,8 +143,12 @@ export default function Overview() {
           <View style={style.subContainer}>
             <DataTable>
               <DataTable.Header>
-                <DataTable.Title>Company</DataTable.Title>
-                <DataTable.Title>Provider</DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>Company</Text>
+                </DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>Provider</Text>
+                </DataTable.Title>
               </DataTable.Header>
               <DataTable.Row>
                 <View style={{ flexGrow: 1, flexDirection: "row" }}>
@@ -150,14 +163,20 @@ export default function Overview() {
             <DataTable>
               <DataTable.Header>
                 <DataTable.Title style={{ flex: 1.5 }}>
-                  Region Name
+                  <Text style={style.cellContainer}>Region Name</Text>
                 </DataTable.Title>
-                <DataTable.Title>Region</DataTable.Title>
-                <DataTable.Title>Zip Code</DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>Region</Text>
+                </DataTable.Title>
+                <DataTable.Title>
+                  <Text style={style.cellContainer}>Zip Code</Text>
+                </DataTable.Title>
               </DataTable.Header>
               <DataTable.Row>
                 <View style={{ flexGrow: 1, flexDirection: "row" }}>
-                  <Text style={{ flex: 1.5, width: 10, margin: 2 }}>
+                  <Text
+                    style={{ flex: 1.5, width: 10, margin: 2, color: "#fff" }}
+                  >
                     {myDataObj.regionName}
                   </Text>
                   <Text style={style.cellContainer}>{myDataObj.region}</Text>
