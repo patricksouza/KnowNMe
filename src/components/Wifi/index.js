@@ -50,7 +50,9 @@ export default function Wifi() {
       <ScrollView>
         <View style={style.subContainer}>
           <List.Section>
-            <List.Subheader style={style.divided}>General</List.Subheader>
+            <List.Subheader style={style.subContainerTitle}>
+              Connection
+            </List.Subheader>
             <List.Item
               title="Wi-Fi Connection status"
               titleStyle={{ color: "#fff" }}
@@ -65,16 +67,18 @@ export default function Wifi() {
               }}
             />
             <List.Item
-              title="Network Type"
+              title="Frequency"
               titleStyle={{ color: "#fff" }}
               descriptionStyle={{ color: "#fff" }}
-              description={values.type.toUpperCase()}
+              description={values.frequency}
             />
           </List.Section>
         </View>
         <View style={style.subContainer}>
           <List.Section>
-            <List.Subheader style={style.divided}>Network</List.Subheader>
+            <List.Subheader style={style.subContainerTitle}>
+              Network
+            </List.Subheader>
             <List.Item
               title="Ip Address"
               titleStyle={{ color: "#fff" }}
@@ -88,10 +92,10 @@ export default function Wifi() {
               description={values.subnet}
             />
             <List.Item
-              title="Frequency"
+              title="Network Type"
               titleStyle={{ color: "#fff" }}
               descriptionStyle={{ color: "#fff" }}
-              description={values.frequency}
+              description={values.type.toUpperCase()}
             />
           </List.Section>
         </View>

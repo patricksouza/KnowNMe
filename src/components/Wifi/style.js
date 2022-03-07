@@ -8,16 +8,24 @@ export default StyleSheet.create({
     alignItems: "stretch",
     backgroundColor: "#1E1E1E",
   },
-  divided: {
-    borderWidth: 0.5,
+  subContainerTitle: {
     borderColor: "rgba(255,255,255,0.0)",
-    borderBottomColor: "#F4717F",
     color: "#fff",
     fontSize: 15,
     fontWeight: "bold",
     textTransform: "uppercase",
   },
-  subContainer: {},
+  subContainer: {
+    margin: 30,
+    marginTop: 10,
+    backgroundColor: "#1a1a1a",
+    borderRadius: 10,
+    elevation: 5,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.2)",
+    borderTopColor: "#F4717F",
+    color: "#F4717F",
+  },
   title: {
     padding: 5,
     fontSize: 15,
