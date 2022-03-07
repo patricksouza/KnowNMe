@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { View, SafeAreaView, ScrollView } from "react-native";
-import { List } from "react-native-paper";
+import {
+  Avatar,
+  Button,
+  Card,
+  Title,
+  Paragraph,
+  List,
+} from "react-native-paper";
 import style from "./style";
 import DeviceInfo from "react-native-device-info";
 var bytes = require("bytes");
@@ -75,7 +82,7 @@ export default function CellPhone() {
       <ScrollView>
         <View style={style.subContainer}>
           <List.Section>
-            <List.Subheader style={style.divided}>General</List.Subheader>
+            <List.Subheader style={style.subContainerTitle}>General</List.Subheader>
             <List.Item
               title="ID"
               titleStyle={{ color: "#fff" }}
@@ -110,7 +117,7 @@ export default function CellPhone() {
         </View>
         <View style={style.subContainer}>
           <List.Section>
-            <List.Subheader style={style.divided}>Storage</List.Subheader>
+            <List.Subheader style={style.subContainerTitle}>Storage</List.Subheader>
             <List.Item
               title="Free Storage"
               titleStyle={{ color: "#fff" }}

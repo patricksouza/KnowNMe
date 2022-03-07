@@ -2,16 +2,21 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
-    paddingBottom: 10,
-    flexDirection: "column",
-    alignItems: "stretch",
     backgroundColor: "#1E1E1E",
   },
-  divided: {
-    borderWidth: 0.5,
+  subContainer: {
+    margin: 30,
+    marginTop: 10,
+    backgroundColor: "#1a1a1a",
+    borderRadius: 10,
+    elevation: 5,
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.2)",
+    borderTopColor: "#F4717F",
+    color: "#F4717F",
+  },
+  subContainerTitle: {
     borderColor: "rgba(255,255,255,0.0)",
-    borderBottomColor: "#F4717F",
     color: "#fff",
     fontSize: 15,
     fontWeight: "bold",
