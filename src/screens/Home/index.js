@@ -33,8 +33,8 @@ export default function Home() {
         screenOptions={{ headerShown: false }}
         options={{
           title: "KnowN Me - IP Info",
-          tabBarShowLabel: false,
           tabBarLabel: "Home",
+          tabBarActiveBackgroundColor: "#1a1a1a",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="access-point-network"
@@ -49,8 +49,8 @@ export default function Home() {
         component={CellPhone}
         screenOptions={{ headerShown: false }}
         options={{
-          tabBarShowLabel: false,
-          tabBarLabel: "Wi-Fi",
+          tabBarLabel: "Phone",
+          tabBarActiveBackgroundColor: "#1a1a1a",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons
               name="cellphone"
@@ -65,8 +65,8 @@ export default function Home() {
         component={Wifi}
         screenOptions={{ headerShown: false }}
         options={{
-          tabBarShowLabel: false,
           tabBarLabel: "Wi-Fi",
+          tabBarActiveBackgroundColor: "#1a1a1a",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="wifi" color={color} size={size} />
           ),
