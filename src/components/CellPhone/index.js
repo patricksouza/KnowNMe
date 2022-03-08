@@ -1,13 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { View, SafeAreaView, ScrollView } from "react-native";
-import {
-  Avatar,
-  Button,
-  Card,
-  Title,
-  Paragraph,
-  List,
-} from "react-native-paper";
+import { View, SafeAreaView, ScrollView, Text } from "react-native";
+import { List } from "react-native-paper";
+import { Col, Row, Grid } from "react-native-easy-grid";
 import style from "./style";
 import DeviceInfo from "react-native-device-info";
 var bytes = require("bytes");
@@ -21,6 +15,7 @@ export default function CellPhone() {
     freeStorage: "",
     totalStorage: "",
     totalMemory: "",
+    usedMemory: "",
   });
 
   function getAllCellData() {
@@ -31,11 +26,18 @@ export default function CellPhone() {
     getFreeDisk();
     getTotalDiskCapacity();
     getTotalMemory();
+    getUsedMemory();
   }
 
   async function getBattery() {
     await DeviceInfo.getBatteryLevel().then((battery) => {
       setValues((values) => ({ ...values, battery: battery || "-" }));
+    });
+  }
+
+  async function getUsedMemory() {
+    await DeviceInfo.getUsedMemory().then((usedMemory) => {
+      setValues((values) => ({ ...values, usedMemory: usedMemory || "-" }));
     });
   }
 
@@ -80,58 +82,130 @@ export default function CellPhone() {
   return (
     <SafeAreaView style={style.container}>
       <ScrollView>
-        <View style={style.subContainer}>
-          <List.Section>
-            <List.Subheader style={style.subContainerTitle}>General</List.Subheader>
-            <List.Item
-              title="ID"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.id}
-            />
-            <List.Item
-              title="Battery Life"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={Number(values.battery).toFixed(2) * 100 + "%"}
-            />
-            <List.Item
-              title="Brandname"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.brand}
-            />
-            <List.Item
-              title="Base OS"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.baseOs}
-            />
-            <List.Item
-              title="Memory"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={bytes(values.totalMemory)}
-            />
-          </List.Section>
-        </View>
-        <View style={style.subContainer}>
-          <List.Section>
-            <List.Subheader style={style.subContainerTitle}>Storage</List.Subheader>
-            <List.Item
-              title="Free Storage"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={bytes(values.freeStorage)}
-            />
-            <List.Item
-              title="Total Storage"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={bytes(values.totalStorage)}
-            />
-          </List.Section>
-        </View>
+        <Grid>
+          <Text style={style.title}>General</Text>
+          <Row style={{ padding: 2 }}>
+            <Col size={20} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="ID"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={values.id}
+                />
+              </View>
+            </Col>
+            <Col size={12} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Battery Life"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={Number(values.battery).toFixed(2) * 100 + "%"}
+                />
+              </View>
+            </Col>
+          </Row>
+          <Row style={{ padding: 2 }}>
+            <Col size={8} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Brandname"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={values.brand}
+                />
+              </View>
+            </Col>
+            <Col size={10} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Base OS"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={values.baseOs}
+                />
+              </View>
+            </Col>
+          </Row>
+          <Text style={style.title}>Resources</Text>
+          <Row style={{ padding: 2 }}>
+            <Col size={10} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Memory"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={bytes(values.totalMemory)}
+                />
+              </View>
+            </Col>
+            <Col size={10} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Memory in use"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={bytes(values.usedMemory)}
+                />
+              </View>
+            </Col>
+          </Row>
+          <Row style={{ padding: 2 }}>
+            <Col size={10} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Free Storage"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={bytes(values.freeStorage)}
+                />
+              </View>
+            </Col>
+            <Col size={10} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Total Storage"
+                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  descriptionStyle={{
+                    color: "#fff",
+                    fontSize: 18,
+                    fontWeight: "600",
+                  }}
+                  description={bytes(values.totalStorage)}
+                />
+              </View>
+            </Col>
+          </Row>
+        </Grid>
       </ScrollView>
     </SafeAreaView>
   );

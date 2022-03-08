@@ -6,6 +6,6 @@ export default StyleSheet.create({
     paddingTop: 20,
     flexDirection: "column",
     alignItems: "stretch",
-    backgroundColor: "#1E1E1E",
+    backgroundColor: "#1a1a1a"
   }
 });

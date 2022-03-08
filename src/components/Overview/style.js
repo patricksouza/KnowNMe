@@ -17,13 +17,15 @@ export default StyleSheet.create({
     backgroundColor: "#1E1E1E",
   },
   subContainer: {
-    backgroundColor: "#262626",
-    borderRadius: 8,
-    margin: 20,
-    padding: 0,
-    borderWidth: 2,
+    margin: 30,
+    marginTop: 10,
+    backgroundColor: "#1a1a1a",
+    borderRadius: 10,
+    elevation: 5,
+    borderWidth: 1,
     borderColor: "rgba(255,255,255,0.2)",
     borderTopColor: "#F4717F",
+    color: "#F4717F",
   },
   cellContainer: {
     flex: 1,
@@ -52,17 +54,14 @@ export default StyleSheet.create({
     color: "#fff"
   },
   searchBar: {
-    backgroundColor: "#262626",
-    borderRadius: 8,
-    margin: 5,
-    padding: 0,
-    borderWidth: 2,
+    margin: 30,
+    marginTop: 10,
+    backgroundColor: "#1a1a1a",
+    borderRadius: 10,
+    elevation: 5,
+    borderWidth: 1,
     borderColor: "rgba(255,255,255,0.2)",
     borderTopColor: "#F4717F",
-  },
-  button: {
-    color: "black",
-    backgroundColor: "#F4717F",
-    width: 100,
-  },
+    color: "#F4717F",
+  }
 });

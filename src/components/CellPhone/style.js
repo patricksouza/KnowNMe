@@ -2,32 +2,32 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
   container: {
-    backgroundColor: "#1E1E1E",
+    backgroundColor: "#1a1a1a",
+    flex: 1,
+    paddingTop: 20,
+    paddingBottom: 10,
+    flexDirection: "column",
+    alignItems: "stretch",
   },
   subContainer: {
-    margin: 30,
-    marginTop: 10,
-    backgroundColor: "#1a1a1a",
-    borderRadius: 10,
-    elevation: 5,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.2)",
-    borderTopColor: "#F4717F",
-    color: "#F4717F",
+    backgroundColor: "#1E1E1E",
+    paddingBottom: 25,
+    borderRadius: 5,
+    elevation: 5
   },
   subContainerTitle: {
     borderColor: "rgba(255,255,255,0.0)",
     color: "#fff",
     fontSize: 15,
     fontWeight: "bold",
-    textTransform: "uppercase",
+    textTransform: "uppercase"
   },
   title: {
     padding: 5,
-    fontSize: 15,
-    marginLeft: 5,
+    fontSize: 16,
+    marginLeft: 20,
     textTransform: "uppercase",
-    fontWeight: "bold",
+    color: "#fff"
   },
   listAccordion: {
     borderWidth: 2,

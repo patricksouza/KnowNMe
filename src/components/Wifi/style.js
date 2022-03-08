@@ -6,7 +6,7 @@ export default StyleSheet.create({
     paddingBottom: 10,
     flexDirection: "column",
     alignItems: "stretch",
-    backgroundColor: "#1E1E1E",
+    backgroundColor: "#1a1a1a"
   },
   subContainerTitle: {
     borderColor: "rgba(255,255,255,0.0)",
@@ -34,7 +34,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   listAccordion: {
-    borderWidth: 2,
+    borderWidth: 1,
     borderColor: "rgba(255,255,255,0.2)",
     borderBottomColor: "#F4717F",
     color: "#F4717F",

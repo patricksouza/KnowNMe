@@ -111,7 +111,7 @@ export default function Overview() {
             </Col>
             <Col>
               <View style={style.containerButton}>
-                <Button mode="contained" style={style.button} onPress={getMyIp}>
+                <Button mode="outlined" color="#F4717F" onPress={getMyIp}>
                   Reload
                 </Button>
               </View>

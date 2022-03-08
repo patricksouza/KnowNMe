@@ -56,7 +56,6 @@ export default function Wifi() {
             <List.Item
               title="Wi-Fi Connection status"
               titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
               description={values.isConnected}
               descriptionStyle={{
                 color:
