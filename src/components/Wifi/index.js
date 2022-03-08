@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { View, SafeAreaView, ScrollView } from "react-native";
+import { View, SafeAreaView, ScrollView, Text } from "react-native";
+import { Col, Row, Grid } from "react-native-easy-grid";
 import * as NetInfo from "@react-native-community/netinfo";
 import { List } from "react-native-paper";
 import style from "./style";
@@ -48,56 +49,72 @@ export default function Wifi() {
   return (
     <SafeAreaView style={style.container}>
       <ScrollView>
-        <View style={style.subContainer}>
-          <List.Section>
-            <List.Subheader style={style.subContainerTitle}>
-              Connection
-            </List.Subheader>
-            <List.Item
-              title="Wi-Fi Connection status"
-              titleStyle={{ color: "#fff" }}
-              description={values.isConnected}
-              descriptionStyle={{
-                color:
-                  values.isConnected === CONSTANTS.CONNECTION_STATUS.UP
-                    ? "#32CD32"
-                    : "#B22222",
-                fontWeight: "bold",
-              }}
-            />
-            <List.Item
-              title="Frequency"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.frequency}
-            />
-          </List.Section>
-        </View>
-        <View style={style.subContainer}>
-          <List.Section>
-            <List.Subheader style={style.subContainerTitle}>
-              Network
-            </List.Subheader>
-            <List.Item
-              title="Ip Address"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.ipAddress}
-            />
-            <List.Item
-              title="Subnet Mask"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.subnet}
-            />
-            <List.Item
-              title="Network Type"
-              titleStyle={{ color: "#fff" }}
-              descriptionStyle={{ color: "#fff" }}
-              description={values.type.toUpperCase()}
-            />
-          </List.Section>
-        </View>
+        <Grid>
+          <Text style={style.title}>Connection</Text>
+          <Row style={{ padding: 2 }}>
+            <Col size={20} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Wi-Fi Connection status"
+                  titleStyle={{ color: "#fff" }}
+                  description={values.isConnected}
+                  descriptionStyle={{
+                    color:
+                      values.isConnected === CONSTANTS.CONNECTION_STATUS.UP
+                        ? "#32CD32"
+                        : "#B22222",
+                    fontWeight: "bold",
+                  }}
+                />
+              </View>
+            </Col>
+            <Col size={20} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Frequency"
+                  titleStyle={{ color: "#fff" }}
+                  descriptionStyle={{ color: "#fff" }}
+                  description={values.frequency}
+                />
+              </View>
+            </Col>
+          </Row>
+          <Text style={style.title}>Network</Text>
+          <Row style={{ padding: 2 }}>
+            <Col size={20} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Ip Address"
+                  titleStyle={{ color: "#fff" }}
+                  descriptionStyle={{ color: "#fff" }}
+                  description={values.ipAddress}
+                />
+              </View>
+            </Col>
+            <Col size={20} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Subnet Mask"
+                  titleStyle={{ color: "#fff" }}
+                  descriptionStyle={{ color: "#fff" }}
+                  description={values.subnet}
+                />
+              </View>
+            </Col>
+          </Row>
+          <Row style={{ padding: 2 }}>
+            <Col size={5} style={{ padding: 10 }}>
+              <View style={style.subContainer}>
+                <List.Item
+                  title="Network Type"
+                  titleStyle={{ color: "#fff" }}
+                  descriptionStyle={{ color: "#fff" }}
+                  description={values.type.toUpperCase()}
+                />
+              </View>
+            </Col>
+          </Row>
+        </Grid>
       </ScrollView>
     </SafeAreaView>
   );
