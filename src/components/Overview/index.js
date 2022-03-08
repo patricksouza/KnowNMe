@@ -5,7 +5,7 @@ import axios from "axios";
 // Structure imports
 import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import { DataTable, Button, Searchbar, Snackbar } from "react-native-paper";
-import { Col, Grid } from "react-native-easy-grid";
+import { Col, Grid, Row } from "react-native-easy-grid";
 
 // Utils functions
 const { validateIp } = require("../../utils/functions");
@@ -62,20 +62,17 @@ export default function Overview() {
       onToggleSnackBar();
     }
     setDataOfIp(response.data);
+      setSnackDynamicText("Data updated!");
+      onToggleSnackBar();
   }
-  async function getMyIp(status = true) {
+  async function getMyIp() {
     if (!connectionStatus) {
       setSnackDynamicText("No internet connection!");
       onToggleSnackBar();
       return;
     }
     const getMyIpAPI = "https://api.ipify.org?format=json";
-    const response = await axios.get(getMyIpAPI).finally(() => {
-      if (!!status) {
-        setSnackDynamicText("Data updated!");
-        onToggleSnackBar();
-      }
-    });
+    const response = await axios.get(getMyIpAPI);
     setData(response.data);
     if (!!response.data["ip"]) {
       generateIpData(response.data["ip"] || "#");
@@ -88,12 +85,12 @@ export default function Overview() {
       setInputQueryStatus("#fff");
       generateIpData(query);
     } else {
-      setInputQueryStatus("red");
+      setInputQueryStatus("#B22222");
     }
   };
 
   useEffect(() => {
-    //getMyIp(false);
+    //getMyIp();
   }, []);
 
   return (
@@ -101,21 +98,29 @@ export default function Overview() {
       <ScrollView>
         <View style={style.container}>
           <Grid>
-            <Col style={{ width: 285 }}>
-              <Text style={style.title}>
-                My IP Address:{" "}
-                <Text style={{ color: "#F4717F", fontWeight: "bold" }}>
-                  {myDataObj.ipAddress}
+            <Row style={{ padding: 15 }}>
+              <Col size={10} style={{ padding: 10 }}>
+                <Text style={style.title}>
+                  My IP Address:{" "}
+                  <Text style={{ color: "#F4717F", fontWeight: "bold" }}>
+                    {myDataObj.ipAddress}
+                  </Text>
                 </Text>
-              </Text>
-            </Col>
-            <Col>
-              <View style={style.containerButton}>
-                <Button mode="outlined" color="#F4717F" onPress={getMyIp}>
-                  Reload
-                </Button>
-              </View>
-            </Col>
+              </Col>
+            </Row>
+            <Row>
+              <Col size={10} style={{ padding: 10 }}>
+                <View style={style.containerButton}>
+                  <Button
+                    mode="contained"
+                    style={style.button}
+                    onPress={getMyIp}
+                  >
+                    Reload
+                  </Button>
+                </View>
+              </Col>
+            </Row>
           </Grid>
           <Searchbar
             style={style.searchBar}

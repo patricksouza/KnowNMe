@@ -24,6 +24,7 @@ export default function Home() {
         tabBarInactiveTintColor: "gray",
         tabBarStyle: {
           backgroundColor: "#1E1E1E",
+          borderTopColor: "rgba(255,255,255,0.0)",
         },
       }}
     >
@@ -69,6 +70,18 @@ export default function Home() {
           tabBarActiveBackgroundColor: "#1a1a1a",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="wifi" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="KnowN Me - Tools"
+        component={Wifi}
+        screenOptions={{ headerShown: false }}
+        options={{
+          tabBarLabel: "tools",
+          tabBarActiveBackgroundColor: "#1a1a1a",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="tools" color={color} size={size} />
           ),
         }}
       />

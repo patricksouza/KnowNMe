@@ -3,35 +3,33 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 20,
-    paddingBottom: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
     flexDirection: "column",
     alignItems: "stretch",
-    backgroundColor: "#1E1E1E",
+    backgroundColor: "#1a1a1a",
   },
   containerButton: {
     flex: 1,
-    paddingBottom: 20,
+    paddingBottom: 10,
     flexDirection: "column",
-    alignItems: "stretch",
-    backgroundColor: "#1E1E1E",
+    alignItems: "center",
+    backgroundColor: "#1a1a1a",
   },
   subContainer: {
     margin: 30,
-    marginTop: 10,
-    backgroundColor: "#1a1a1a",
-    borderRadius: 10,
+    marginTop: 5,
+    backgroundColor: "#1E1E1E",
+    paddingBottom: 25,
+    borderRadius: 5,
     elevation: 5,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.2)",
-    borderTopColor: "#F4717F",
-    color: "#F4717F",
   },
   cellContainer: {
     flex: 1,
     width: 10,
     margin: 2,
-    color: "#fff"
+    color: "#fff",
+    fontSize: 18,
   },
   snackContainer: {
     borderWidth: 2,
@@ -43,25 +41,26 @@ export default StyleSheet.create({
     fontSize: 15,
     marginLeft: 5,
     textTransform: "uppercase",
-    fontWeight: "bold",
-    color: "#fff"
+    textAlign: "center",
+    fontWeight: "600",
+    color: "#fff",
   },
   subTitle: {
     padding: 10,
     marginLeft: 15,
     textTransform: "uppercase",
     fontWeight: "bold",
-    color: "#fff"
+    color: "#fff",
   },
   searchBar: {
     margin: 30,
     marginTop: 10,
-    backgroundColor: "#1a1a1a",
+    backgroundColor: "#1E1E1E",
     borderRadius: 10,
     elevation: 5,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.2)",
-    borderTopColor: "#F4717F",
-    color: "#F4717F",
-  }
+  },
+  button: {
+    color: "black",
+    backgroundColor: "#F4717F",
+  },
 });

@@ -9,13 +9,6 @@ export default StyleSheet.create({
     flexDirection: "column",
     alignItems: "stretch",
   },
-  subContainerTitle: {
-    borderColor: "rgba(255,255,255,0.0)",
-    color: "#fff",
-    fontSize: 15,
-    fontWeight: "bold",
-    textTransform: "uppercase",
-  },
   subContainer: {
     backgroundColor: "#1E1E1E",
     paddingBottom: 25,
@@ -28,11 +21,5 @@ export default StyleSheet.create({
     marginLeft: 20,
     textTransform: "uppercase",
     color: "#fff",
-  },
-  listAccordion: {
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.2)",
-    borderBottomColor: "#F4717F",
-    color: "#F4717F",
   },
 });
