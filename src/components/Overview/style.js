@@ -20,7 +20,7 @@ export default StyleSheet.create({
     margin: 20,
     marginTop: 5,
     backgroundColor: "#1E1E1E",
-    paddingBottom: 25,
+    paddingBottom: 10,
     borderRadius: 5,
     elevation: 5,
   },
@@ -62,4 +62,8 @@ export default StyleSheet.create({
     color: "black",
     backgroundColor: "#F4717F",
   },
+  infoText: {
+    textAlign: "center",
+    color: "grey"
+  }
 });

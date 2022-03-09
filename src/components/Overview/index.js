@@ -34,15 +34,8 @@ export default function Overview() {
   const [visible, setVisible] = useState(false);
   const [inputQueryStatus, setInputQueryStatus] = useState("#fff");
   const [refreshing, setRefreshing] = React.useState(false);
-
   const onToggleSnackBar = () => setVisible(!visible);
   const onDismissSnackBar = () => setVisible(false);
-
-  const onRefresh = React.useCallback(() => {
-    setRefreshing(true);
-    getMyIp();
-    wait(2000).then(() => setRefreshing(false));
-  }, []);
 
   setTimeout(() => {
     NetInfo.addEventListener((state) => {
@@ -107,6 +100,12 @@ export default function Overview() {
     }
   };
 
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    getMyIp();
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
+
   useEffect(() => {
     //getMyIp();
   }, []);
@@ -115,7 +114,12 @@ export default function Overview() {
     <SafeAreaView>
       <ScrollView
         refreshControl={
-          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+            progressBackgroundColor="#262626"
+            colors={["#F4717F"]}
+          />
         }
       >
         <View style={style.container}>
@@ -130,7 +134,8 @@ export default function Overview() {
                 </Text>
               </Col>
             </Row>
-            <Row>
+            <Text style={style.infoText}> Tap, hold and pull to update with your IP data.</Text>
+            {/**<Row>
               <Col size={10} style={{ padding: 5 }}>
                 <View style={style.containerButton}>
                   <Button
@@ -142,7 +147,7 @@ export default function Overview() {
                   </Button>
                 </View>
               </Col>
-            </Row>
+            </Row> */}
           </Grid>
           <Searchbar
             style={style.searchBar}
@@ -214,7 +219,13 @@ export default function Overview() {
               <DataTable.Row>
                 <View style={{ flexGrow: 1, flexDirection: "row" }}>
                   <Text
-                    style={{ flex: 1.5, width: 10, margin: 2, color: "#fff" }}
+                    style={{
+                      flex: 1.5,
+                      width: 10,
+                      margin: 2,
+                      color: "#fff",
+                      fontSize: 18,
+                    }}
                   >
                     {myDataObj.regionName}
                   </Text>
