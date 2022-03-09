@@ -3,13 +3,24 @@ import NetInfo from "@react-native-community/netinfo";
 import axios from "axios";
 
 // Structure imports
-import { View, Text, SafeAreaView, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  ScrollView,
+  RefreshControl,
+} from "react-native";
 import { DataTable, Button, Searchbar, Snackbar } from "react-native-paper";
 import { Col, Grid, Row } from "react-native-easy-grid";
 
 // Utils functions
 const { validateIp } = require("../../utils/functions");
 const { CONSTANTS } = require("../../utils/constants");
+
+// Refresh Control
+const wait = (timeout) => {
+  return new Promise((resolve) => setTimeout(resolve, timeout));
+};
 
 // Style imports
 import style from "./style";
@@ -22,9 +33,16 @@ export default function Overview() {
   const [dataOfIp, setDataOfIp] = useState({});
   const [visible, setVisible] = useState(false);
   const [inputQueryStatus, setInputQueryStatus] = useState("#fff");
+  const [refreshing, setRefreshing] = React.useState(false);
 
   const onToggleSnackBar = () => setVisible(!visible);
   const onDismissSnackBar = () => setVisible(false);
+
+  const onRefresh = React.useCallback(() => {
+    setRefreshing(true);
+    getMyIp();
+    wait(2000).then(() => setRefreshing(false));
+  }, []);
 
   setTimeout(() => {
     NetInfo.addEventListener((state) => {
@@ -62,8 +80,8 @@ export default function Overview() {
       onToggleSnackBar();
     }
     setDataOfIp(response.data);
-      setSnackDynamicText("Data updated!");
-      onToggleSnackBar();
+    setSnackDynamicText("Data updated!");
+    onToggleSnackBar();
   }
   async function getMyIp() {
     if (!connectionStatus) {
@@ -95,7 +113,11 @@ export default function Overview() {
 
   return (
     <SafeAreaView>
-      <ScrollView>
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
         <View style={style.container}>
           <Grid>
             <Row style={{ padding: 5 }}>
