@@ -17,7 +17,7 @@ export default StyleSheet.create({
     backgroundColor: "#1a1a1a",
   },
   subContainer: {
-    margin: 30,
+    margin: 20,
     marginTop: 5,
     backgroundColor: "#1E1E1E",
     paddingBottom: 25,
@@ -26,8 +26,7 @@ export default StyleSheet.create({
   },
   cellContainer: {
     flex: 1,
-    width: 10,
-    margin: 2,
+    margin: 0,
     color: "#fff",
     fontSize: 18,
   },

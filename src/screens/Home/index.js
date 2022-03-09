@@ -1,8 +1,10 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import Overview from "../../components/Overview";
 import CellPhone from "../../components/CellPhone";
 import Wifi from "../../components/Wifi";
+import Tools from "../../components/Tools";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -75,7 +77,7 @@ export default function Home() {
       />
       <Tab.Screen
         name="KnowN Me - Tools"
-        component={Wifi}
+        component={Tools}
         screenOptions={{ headerShown: false }}
         options={{
           tabBarLabel: "tools",

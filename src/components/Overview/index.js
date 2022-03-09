@@ -98,8 +98,8 @@ export default function Overview() {
       <ScrollView>
         <View style={style.container}>
           <Grid>
-            <Row style={{ padding: 15 }}>
-              <Col size={10} style={{ padding: 10 }}>
+            <Row style={{ padding: 5 }}>
+              <Col size={10} style={{ padding: 5 }}>
                 <Text style={style.title}>
                   My IP Address:{" "}
                   <Text style={{ color: "#F4717F", fontWeight: "bold" }}>
@@ -109,7 +109,7 @@ export default function Overview() {
               </Col>
             </Row>
             <Row>
-              <Col size={10} style={{ padding: 10 }}>
+              <Col size={10} style={{ padding: 5 }}>
                 <View style={style.containerButton}>
                   <Button
                     mode="contained"

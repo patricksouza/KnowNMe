@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { View, SafeAreaView, ScrollView, Text } from "react-native";
 import { Col, Row, Grid } from "react-native-easy-grid";
-import * as NetInfo from "@react-native-community/netinfo";
+import NetInfo from "@react-native-community/netinfo";
 import { List } from "react-native-paper";
 import style from "./style";
 const { CONSTANTS } = require("../../utils/constants");
@@ -16,6 +16,7 @@ export default function Wifi() {
     ipAddress: "-",
     subnet: "-",
   });
+
   NetInfo.configure({
     reachabilityUrl: "https://clients3.google.com/generate_204",
     reachabilityTest: async (response) => response.status === 204,
