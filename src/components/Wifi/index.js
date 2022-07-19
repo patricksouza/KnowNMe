@@ -57,14 +57,14 @@ export default function Wifi() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Wi-Fi Connection status"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   description={values.isConnected}
                   descriptionStyle={{
                     color:
                       values.isConnected === CONSTANTS.CONNECTION_STATUS.UP
                         ? "#32CD32"
                         : "#B22222",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                 />
@@ -74,10 +74,10 @@ export default function Wifi() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Frequency"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.frequency}
@@ -91,10 +91,10 @@ export default function Wifi() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Ip Address"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.ipAddress}
@@ -105,10 +105,10 @@ export default function Wifi() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Subnet Mask"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.subnet}
@@ -121,10 +121,10 @@ export default function Wifi() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Network Type"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.type.toUpperCase()}

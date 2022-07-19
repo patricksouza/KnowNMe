@@ -31,7 +31,7 @@ export default function CellPhone() {
 
   async function getBattery() {
     await DeviceInfo.getBatteryLevel().then((battery) => {
-      setValues((values) => ({ ...values, battery: battery || "-" }));
+      setValues((batteryValues) => ({ ...batteryValues, battery: battery || "-" }));
     });
   }
 
@@ -89,10 +89,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="ID"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.id}
@@ -103,10 +103,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Battery Life"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={Number(values.battery).toFixed(2) * 100 + "%"}
@@ -119,10 +119,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Brandname"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.brand}
@@ -133,10 +133,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Base OS"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={values.baseOs}
@@ -150,10 +150,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Memory"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={bytes(values.totalMemory)}
@@ -164,10 +164,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Memory in use"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={bytes(values.usedMemory)}
@@ -180,10 +180,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Free Storage"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={bytes(values.freeStorage)}
@@ -194,10 +194,10 @@ export default function CellPhone() {
               <View style={style.subContainer}>
                 <List.Item
                   title="Total Storage"
-                  titleStyle={{ color: "grey", fontSize: 18 }}
+                  titleStyle={{ color: "grey", fontSize: 15 }}
                   descriptionStyle={{
                     color: "#fff",
-                    fontSize: 18,
+                    fontSize: 15,
                     fontWeight: "600",
                   }}
                   description={bytes(values.totalStorage)}

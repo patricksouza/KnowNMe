@@ -4,7 +4,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 5,
-    paddingBottom: 5,
+    paddingBottom: 14,
     flexDirection: "column",
     alignItems: "stretch",
     backgroundColor: "#1a1a1a",
@@ -28,7 +28,7 @@ export default StyleSheet.create({
     flex: 1,
     margin: 0,
     color: "#fff",
-    fontSize: 18,
+    fontSize: 15,
   },
   snackContainer: {
     borderWidth: 2,

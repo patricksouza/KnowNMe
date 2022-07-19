@@ -59,6 +59,7 @@ export default function Overview() {
   async function generateIpData(ipTarget) {
     const getMyIpData = "http://ip-api.com/json/#";
     const newRequest = getMyIpData.replace("#", ipTarget);
+    console.log(ipTarget)
     let hasError = null;
     const response = await axios.get(newRequest).catch((err) => {
       if (err.response) {
@@ -224,7 +225,7 @@ export default function Overview() {
                       width: 10,
                       margin: 2,
                       color: "#fff",
-                      fontSize: 18,
+                      fontSize: 15
                     }}
                   >
                     {myDataObj.regionName}
