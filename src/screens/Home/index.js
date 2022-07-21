@@ -4,7 +4,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Overview from "../../components/Overview";
 import CellPhone from "../../components/CellPhone";
 import Wifi from "../../components/Wifi";
-import Tools from "../../components/Tools";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -72,18 +71,6 @@ export default function Home() {
           tabBarActiveBackgroundColor: "#1a1a1a",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="wifi" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="KnowN Me - Tools"
-        component={Tools}
-        screenOptions={{ headerShown: false }}
-        options={{
-          tabBarLabel: "tools",
-          tabBarActiveBackgroundColor: "#1a1a1a",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="tools" color={color} size={size} />
           ),
         }}
       />

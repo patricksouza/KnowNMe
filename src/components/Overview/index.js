@@ -39,7 +39,7 @@ export default function Overview() {
 
   setTimeout(() => {
     NetInfo.addEventListener((state) => {
-      setConnectionStatus(state.isWifiEnabled || state.isConnected);
+      setConnectionStatus(!!state.isWifiEnabled || !!state.isConnected);
     });
   }, 1000);
 
@@ -59,7 +59,6 @@ export default function Overview() {
   async function generateIpData(ipTarget) {
     const getMyIpData = "http://ip-api.com/json/#";
     const newRequest = getMyIpData.replace("#", ipTarget);
-    console.log(ipTarget)
     let hasError = null;
     const response = await axios.get(newRequest).catch((err) => {
       if (err.response) {
@@ -107,10 +106,6 @@ export default function Overview() {
     wait(2000).then(() => setRefreshing(false));
   }, []);
 
-  useEffect(() => {
-    //getMyIp();
-  }, []);
-
   return (
     <SafeAreaView>
       <ScrollView
@@ -135,20 +130,10 @@ export default function Overview() {
                 </Text>
               </Col>
             </Row>
-            <Text style={style.infoText}> Tap, hold and pull to update with your IP data.</Text>
-            {/**<Row>
-              <Col size={10} style={{ padding: 5 }}>
-                <View style={style.containerButton}>
-                  <Button
-                    mode="contained"
-                    style={style.button}
-                    onPress={getMyIp}
-                  >
-                    Reload
-                  </Button>
-                </View>
-              </Col>
-            </Row> */}
+            <Text style={style.infoText}>
+              {" "}
+              Tap, hold and pull to update with your IP data.
+            </Text>
           </Grid>
           <Searchbar
             style={style.searchBar}
@@ -225,7 +210,7 @@ export default function Overview() {
                       width: 10,
                       margin: 2,
                       color: "#fff",
-                      fontSize: 15
+                      fontSize: 15,
                     }}
                   >
                     {myDataObj.regionName}
